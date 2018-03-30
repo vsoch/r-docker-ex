@@ -13,4 +13,7 @@ RUN R -e 'packrat::restore(project="/home/rstudio/project");'
 # .dockerignore can ignore some files/folders if desirable
 COPY --chown=rstudio:rstudio . /home/rstudio/project
 
+# Init the files needed in the container
+RUN /bin/bash /init
+
 USER root
